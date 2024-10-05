@@ -1,0 +1,165 @@
+/* Set the background of the page */
+body {
+    background-image: url('https://images.unsplash.com/photo-1724681880409-7da6be4c90b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    /* background size should match the size of the image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Style the search bar */
+input[type="text"] {
+    width: 100%;
+    /* Background color of the search bar should be transparent */
+    background-color: transparent;
+    color: #333;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #fdfcfc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style the search button */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: rgb(253, 251, 252);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Style the header */
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the main content */
+main {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the footer */
+footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style buttons */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    header, footer {
+        padding: 10px;
+    }
+}
+
+#searchResults, #timeResults, #luckyResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style the search results so the links are displayed in blue */
+#searchResults a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#luckyResults a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Make the title of the search results bold */
+#searchResults h2 {
+    font-weight: bold;
+}
+
+#luckyResults h2 {
+    font-weight: bold;
+}
+
+/* Style the title of the search engine to have altering colors in a wave pattern */
+#title {
+    color: #007BFF;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    animation: colorChange 3s infinite;
+}
+
+/* Keyframes for the title color change */
+@keyframes colorChange {
+    0% {
+        color: #007BFF;
+    }
+    25% {
+        color: #e60f85;
+    }
+    50% {
+        color: #05a813;
+    }
+    75% {
+        color: #d88c00;
+    }
+    100% {
+        color: #ff0000;
+    }
+}
