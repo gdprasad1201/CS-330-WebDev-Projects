@@ -1,3 +1,5 @@
+var myKey = config.MY_KEY;
+
 function apiSearch() {
   var params = {
     q: $("#query").val(),
@@ -10,7 +12,7 @@ function apiSearch() {
     url: "https://api.bing.microsoft.com/v7.0/search?" + $.param(params),
     type: "GET",
     headers: {
-      "Ocp-Apim-Subscription-Key": "1bd4997232c3429a8a1efb7f086dfd17",
+      "Ocp-Apim-Subscription-Key": myKey,
     },
   })
     .done(function (data) {
@@ -63,7 +65,7 @@ $("#lucky").click(function () {
     url: "https://api.bing.microsoft.com/v7.0/search?" + $.param(params),
     type: "GET",
     headers: {
-      "Ocp-Apim-Subscription-Key": "1bd4997232c3429a8a1efb7f086dfd17",
+      "Ocp-Apim-Subscription-Key": myKey,
     },
   })
     .done(function (data) {
