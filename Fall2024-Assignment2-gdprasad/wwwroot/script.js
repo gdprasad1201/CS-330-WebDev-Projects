@@ -47,8 +47,7 @@ $("#title").click(function () {
 });
 
 $("#time").click(function () {
-  var time = new Date().toLocaleTimeString();
-  $("#timeResults").text(time);
+  $("#timeResults").text(new Date().toLocaleTimeString());
   $("#timeResults").css("visibility", "visible");
   $("#timeResults").dialog();
 });

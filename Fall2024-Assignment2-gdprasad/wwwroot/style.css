@@ -23,8 +23,7 @@ body {
 /* Style the search bar */
 input[type="text"] {
     width: 100%;
-    /* Background color of the search bar should be transparent */
-    background-color: transparent;
+    background-color: #fdfcfc;
     color: #333;
     padding: 12px 20px;
     margin: 8px 0;
