@@ -1,0 +1,115 @@
+@model Fall2024_Assignment3_gdprasad.Models.ActorDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Actor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Actor Name:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Actor.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Age:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Actor.Age)
+        </dd>
+        <dt class="col-sm-2">
+            Gender:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Actor.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            IMDB Link:
+        </dt>
+        <dd class="col-sm-10">
+            <a href="@Model.Actor.ImdbLink" target="_blank">@Model.Actor.ImdbLink</a>
+        </dd>
+        <dt class="col-sm-2">
+            Photo:
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Actor.PhotoLink" alt="Actor Photo" style="max-width: 200px;"/>
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Actor.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<!-- Show tweets and sentiment analysis for the actor in a two column table. -->
+<div>
+    <h4>Tweets About @Model.Actor.Name</h4>
+    <h6>Overall Sentiment: @Model.overallSentiment</h6>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Tweets
+                </th>
+                <th>
+                    Sentiment Analysis
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TweetsANDSentiments)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Item2)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Show list of movies the actor has acted in. -->
+<div>
+    <h4>Movies Starring @Model.Actor.Name</h4>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Poster
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Movies)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @if (item.PosterLink != null)
+                        {
+                            <img src="@item.PosterLink" alt="Movie Poster" style="max-width: 200px;"/>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
